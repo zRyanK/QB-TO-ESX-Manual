@@ -1,0 +1,201 @@
+ESX = nil
+
+Citizen.CreateThread(function()
+  while ESX == nil do
+    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+    Citizen.Wait(amount)
+  end
+end)
+
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+
+QBCore = nil 
+
+Citizen.CreateThread(function()
+    while QBCore == nil do
+        TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
+        Citizen.Wait(amount)
+    end
+end)
+
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+
+TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
+
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+
+
+///////////////////
+///Client side////
+/////////////////
+
+QBCore.Functions.GetPlayerData = function(cb)
+
+QBCore.Functions.GetPlayers = function()
+
+QBCore.Functions.DrawText = function(x, y, width, height, scale, r, g, b, a, text)
+
+QBCore.Functions.DrawText3D = function(x, y, z, text)
+
+QBCore.Functions.GetCoords = function(entity)
+
+QBCore.Functions.SpawnVehicle = function(model, cb, coords, isnetworked)
+
+QBCore.Functions.DeleteVehicle = function(vehicle)
+
+QBCore.Functions.Notify = function(text, textype, length)
+
+QBCore.Functions.TriggerCallback = function(name, cb, ...)
+
+QBCore.Functions.EnumerateEntities = function(initFunc, moveFunc, disposeFunc)
+
+QBCore.Functions.GetVehicles = function()
+
+QBCore.Functions.GetPeds = function(ignoreList)
+
+QBCore.Functions.GetClosestVehicle = function(coords)
+
+QBCore.Functions.GetClosestPed = function(coords, ignoreList)
+
+QBCore.Functions.GetClosestPlayer = function(coords)
+
+QBCore.Functions.GetPlayersFromCoords = function(coords, distance)
+
+QBCore.Functions.HasItem = function(source, cb, item)
+
+QBCore.Functions.Progressbar = function(name, label, duration, useWhileDead, canCancel, disableControls, animation, prop, propTwo, onFinish, onCancel)
+
+QBCore.Functions.GetVehicleProperties = function(vehicle)
+
+QBCore.Functions.SetVehicleProperties = function(vehicle, props)
+
+    
+//////////////////
+///Client side///
+////////////////
+
+QBCore.Functions.ExecuteSql = function(wait, query, cb)
+
+QBCore.Functions.GetIdentifier = function(source, idtype)
+
+QBCore.Functions.GetSource = function(identifier)
+
+QBCore.Functions.GetPlayer = function(source)
+
+QBCore.Functions.GetPlayerByCitizenId = function(citizenid)
+
+QBCore.Functions.GetPlayerByPhone = function(number)
+
+QBCore.Functions.GetPlayers = function()
+
+QBCore.Functions.CreateCallback = function(name, cb)
+
+QBCore.Functions.TriggerCallback = function(name, source, cb, ...)
+
+QBCore.Functions.CreateUseableItem = function(item, cb)
+
+QBCore.Functions.CanUseItem = function(item)
+
+QBCore.Functions.UseItem = function(source, item)
+
+QBCore.Functions.AddPermission = function(source, permission)
+
+QBCore.Functions.RemovePermission = function(source)
+
+QBCore.Functions.HasPermission = function(source, permission)
+
+QBCore.Functions.GetPermission = function(source)
+
+QBCore.Functions.IsPlayerBanned = function (source)
+-RegisterNetEvent('esx:playerLoaded')
+-AddEventHandler('esx:playerLoaded')
+
+-RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
+-AddEventHandler('QBCore:Client:OnPlayerLoaded')
+
+
+"RegisterNetEvent('esx:setJob')"
+"AddEventHandler('esx:setJob')"
+
+
+[   RegisterNetEvent('QBCore:Client:OnJobUpdate')  ]
+[   AddEventHandler('QBCore:Client:OnJobUpdate')   ]
+
+
+.DrawText3D(1, 1, 1, 'something')
+
+.QBCore.Functions.DrawText3D(1, 1, 1, 'something')
+
+
++   xPlayer.getInventoryItem
+
++   xPlayer.Functions.GetItemByName
+
+
+-----------------------------------------------
+
+xPlayer.removeInventoryItem
+
+xPlayer.Functions.RemoveItem
+
+-----------------------------------------------
+
+xPlayer.addInventoryItem
+
+xPlayer.Functions.AddItem
+
+-----------------------------------------------
+
+ESX.GetPlayerFromId(src)
+
+QBCore.Functions.GetPlayer(src)
+
+-----------------------------------------------
+
+ESX.Game.SpawnVehicle()
+ESX.Game.GetVehicleProperties()
+ESX.Game.GetClosestVehicle()
+
+QBCore.Functions.SpawnVehicle()
+QBCore.Functions.GetVehicleProperties()
+QBCore.Functions.GetClosestVehicle()
+ESX.GetPlayerData()
+
+QBCore.Functions.GetPlayerData()
+
+-----------------------------------------------
+
+ESX.RegisterUsableItem()
+
+QBCore.Functions.CreateUseableItem()
+
+-----------------------------------------------
+
+ESX.RegisterServerCallback()
+
+QBCore.Functions.CreateCallback()
+
+-----------------------------------------------
+
+ESX.TriggerServerCallback()
+
+QBCore.Functions.TriggerCallback()
+
+-----------------------------------------------
+
+MySQL.Async.fetchScalar()
+MySQL.Async.fetchAll()
+
+exports['ghmattimysql']:scalar()
+exports['ghmattimysql']:execute()
+
+-----------------------------------------------
+
+RegisterCommand
+
+QBCore.Commands.Add()
